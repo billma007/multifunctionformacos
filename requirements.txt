@@ -1,0 +1,10 @@
+pyttsx3==2.71
+pillow
+pyperclip
+you-get
+requests
+playsound==1.2.2
+pyecharts
+tqdm
+BeautifulSoup4
+PyQt5
