@@ -214,11 +214,12 @@ class Mainmake:
         self.SysTrayIcon  = None  # 判断是否打开系统托盘图标
         self.mainroot = tkinter.Tk()
         self.mainroot.title("马哥多功能程序-------版本1.4.0")
-        self.mainroot.geometry('1000x673')
+        self.mainroot.geometry('690x340')
         self.mainroot.resizable(False,False)
         self.mainroot.iconbitmap('ico.ico')
         #---------------图片------------------#
-        self.pil_image = Image.open(self.passs+"videodownloadimage.jpg")
+        self.pil_image = Image.open(self.passs+"videodownloadimage.jpg").resize((280,330),Image.ANTIALIAS)
+
 
         # 将pil格式的图片转换为tk格式的image
         self.tk_image = ImageTk.PhotoImage(self.pil_image)
@@ -261,68 +262,30 @@ class Mainmake:
 
         self.button_musicdown = tk.Button(self.mainroot,
             text='全网音乐下载',
-            width=50,
+            width=30,
             command=lambda:go_to_musicdownload())
         self.button_gpbt = tk.Button(self.mainroot,
             text='狗屁不通文章生成',
             width=30,
             command=lambda:go_to_gpbt())
-        self.button_opengithub = tk.Button(self.mainroot, 
-            text='GitHub开源地址',      
-            width=14, 
-            command=lambda:open_new("https://github.com/billma007/multifunction"))
-        self.button_openblog = tk.Button(self.mainroot, 
-            text='作者博客',      
-            width=14, 
-            command=lambda:open_new("https://billma.top"))
-        self.button_learnmore = tk.Button(self.mainroot,
-            text='了解更多',
-            width=14,
-            command=lambda:learnmore())
-        self.button_copyright = tk.Button(self.mainroot,
-            text='版权协议与许可',
-            width=14,
-            command=lambda:copyr())
-
-        self.checkupd     = tk.Button(self.mainroot,
-            text='检查更新',
-            width=14,
-            command=lambda:go_to_check())
-        self.gotohelp     = tk.Button(self.mainroot,
-            text='查看帮助（中文）',
-            width=14,
-            command=lambda:webbrowser.open("https://github.com/billma007/multifunction/blob/main/README-Chinese.md"))
-        self.gotodoc     = tk.Button(self.mainroot,
-            text='查看文档(完整)',
-            width=14,
-            command=lambda:webbrowser.open("https://multifunction.readthedocs.io"))
         self.labelmore = tk.Label(self.mainroot,text="""Copyright (C) 2022 BillMa007|BillMa007 版权所有""",font=("等线",  12))
         self.labelthank=tk.Label(self.mainroot,text="感谢您的使用！",font=("等线",30))
         self.labelimg.place(x=400,y=0)
         self.labelwel.place(x=0,y=10)
-        self.button_chat.place(x=0,y=66)
-        self.button_weatherui.place(x=0,y=115)
-        self.button_transui.place(x=0,y=164)
-        self.button_videodown.place(x=0,y=213)
+        self.button_chat.place(x=0,y=50)
+        self.button_weatherui.place(x=0,y=80)
+        self.button_transui.place(x=0,y=110)
+        self.button_videodown.place(x=0,y=140)
 
-        self.button_videochange.place(x=0,y=262)
-        self.button_covidchina.place(x=120,y=262)
-        self.button_covidworld.place(x=240,y=262)
+        self.button_videochange.place(x=0,y=170)
+        self.button_covidchina.place(x=120,y=170)
+        self.button_covidworld.place(x=240,y=170)
 
-        self.button_musicdown.place(x=0,y=360)
-        self.button_gpbt.place(x=0,y=408)
-        
-        self.button_openblog.place(x=120,y=455)
-        self.button_opengithub.place(x=0,y=455)
+        self.button_musicdown.place(x=0,y=200)
+        self.button_gpbt.place(x=0,y=230)
 
-        self.checkupd.place(x=0,y=488 )
-        self.gotohelp.place(x=120,y=488)
-        self.gotodoc.place(x=240,y=488)
-
-        self.button_learnmore.place(x=0,y=518)
-        self.labelmore.place(x=0,y=580)
-        self.button_copyright.place(x=120,y=518)
-        self.labelthank.place(x=50,y=600)
+        self.labelmore.place(x=0,y=270)
+        self.labelthank.place(x=50,y=300)
 
     def mainmake(self):
         self.mainroot.mainloop()

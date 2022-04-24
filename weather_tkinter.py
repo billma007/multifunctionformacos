@@ -79,7 +79,6 @@ class Weather:
     def cometohere(self):
         self.root.mainloop()
 def gotoweather():
-    query.TxtCreate()
     asd=Weather()
     asd.cometohere()
 if __name__ == "__main__":
